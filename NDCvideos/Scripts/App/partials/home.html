@@ -1,0 +1,59 @@
+<header>
+    <section class="container">
+        <h2>Welcome to NDC Videos</h2>
+        <div class="responsive-iframe-container">
+            <iframe src="https://player.vimeo.com/video/138447193?badge=0&autopause=0&player_id=0" width="800" height="480" frameborder="0" title="Building awesome desktop apps using web technologies - Jonas Folles&oslash;" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+        </div>
+    </section>
+    <section ng-if="isAuthenticated() "id="latestvideos">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">Latest Videos</h2>
+                    <hr class="primary">
+                </div>
+            </div>
+        </div>
+        <div ng-controller="videoController">
+            <div class="w3-container">
+                <div class="w3-row-padding">
+                    <div ng-repeat="video in latestVideos">
+                        <div class="col-lg-3 col-md-6 text-center w3-container">
+                            <!--<p class="service-box" style="font-size:15px">{{video.title}}</p>-->
+                            <div class="service-box">
+                                <div class="responsive-iframe-container">
+                                    <div ng-bind-html="video.iframe | sanitize">
+                                        {{video.iframe}}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br/>
+            <br/>
+            <div class="container">
+                <div class="w3-row-padding">
+                    <h2 class="section-heading">Most Viewed</h2>
+                    <hr class="primary" />
+                </div>
+            </div>
+            <div class="w3-container">
+                <div class="w3-row-padding">
+                    <div ng-repeat="video in mostViewsData">
+                        <div class="col-lg-3 col-md-6 text-center w3-container">
+                            <div class="service-box">
+                                <div class="responsive-iframe-container">
+                                    <div ng-bind-html="video.iframe | sanitize">
+                                        {{video.iframe}}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</header>

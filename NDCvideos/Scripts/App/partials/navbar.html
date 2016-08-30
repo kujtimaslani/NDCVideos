@@ -1,0 +1,41 @@
+﻿<nav ng-controller="NavbarCtrl" id="mainNav" class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand page-scroll" ui-sref="home">NDC { Videos }</a>
+        </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-left">
+                <li>
+                    <a ui-sref="videos">Videos</a>
+                </li>
+            </ul>
+            <ul ng-if="!isAuthenticated()" class="nav navbar-nav navbar-right">
+                <li>
+                    <a ui-sref="login">Login</a>
+                </li>
+                <li>
+                    <a ui-sref="signup">Sign up</a>
+                </li>
+            </ul>
+            <ul ng-if="isAuthenticated()" class="nav navbar-nav navbar-right">
+                <li ng-if="isAdmin">
+                    <a ui-sref="admin">Admin</a>
+                </li>
+                <li>
+                    <a ui-sref="profile">Profile</a>
+                </li>
+                <li>
+                    <a ui-sref="logout">Logout</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>

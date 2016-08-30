@@ -1,0 +1,31 @@
+<header>
+    <section class="container">
+        <div class="w3-row-padding">
+            <div class="w3-form panel">
+                <div class="panel-body">
+                    <h2 class="text-center">Log in</h2>
+                    <form class="w3-form" method="post" ng-submit="login()" name="loginForm">
+                        <div class="w3-group">
+                            <input class="form-control" name="email" ng-model="user.email" required ng-required="true" ng-pattern="/^[a-zA-ZæÆøØåÅ][\w\.-]*[a-zA-Z0-9æÆøØåÅ]@[a-zA-ZæÆøØåÅ][\w\.-]*[a-zA-Z0-9æÆøØåÅ]\.[a-zA-Z][a-zA-Z\.]*[a-zA-Z]$/" placeholder="Email" autofocus/>
+                            <h4><span class="label label-info" ng-show="loginForm.email.$error.required && loginForm.email.$dirty">Email is required</span></h4>
+                            <h5><span class="label label-danger" ng-show="loginForm.email.$error.pattern && loginForm.email.$dirty">Email pattern is not valid</span></h5>
+                        </div>
+                        <div class="w3-group">
+                            <input class="form-control" type="password" name="password" ng-model="user.password" required ng-required="true" placeholder="Password">
+                            <h4><span class="label label-info" ng-show="loginForm.password.$error.required && loginForm.password.$dirty">Password is required</span></h4>
+                        </div>
+                        <div class="w3-group">
+                            <input class="form-control" required ng-required="true" type="password" name="access" ng-model="user.access" placeholder="Access code">
+                            <h4><span class="label label-info" ng-show="loginForm.access.$error.required && loginForm.access.$dirty">Access code is required</span></h4>
+                        </div>
+                        <button type="submit" ng-disabled="loginForm.$invalid" class="btn btn-lg  btn-block btn-success">Log in</button>
+                        <br />
+                        <p class="text-center text-muted">
+                            <small>Don't have an account yet? <a href="/#/signup">Sign up</a></small>
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+</header>

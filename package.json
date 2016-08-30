@@ -1,0 +1,29 @@
+{
+  "name": "ndcvideos-server",
+  "version": "0.8.0",
+  "main": "server.js",
+  "devDependencies": {
+    "async": "^1.5.2",
+    "bcryptjs": "^2.3.0",
+    "body-parser": "^1.15.0",
+    "colors": "^1.1.2",
+    "cors": "^2.7.1",
+    "express": "^4.13.4",
+    "jwt-simple": "^0.5.0",
+    "mocha": "^2.4.5",
+    "moment": "^2.13.0",
+    "mongoose": "^4.4.13",
+    "morgan": "^1.7.0",
+    "request": "^2.72.0",
+    "should": "^8.3.1",
+    "supertest": "^1.2.0"
+  },
+  "scripts": {
+    "test": "mocha test"
+  },
+  "dependencies": {
+    "async": "^2.0.0-rc.4",
+    "bcryptjs": "^2.3.0",
+    "node-cron": "^1.1.1"
+  }
+}

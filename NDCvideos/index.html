@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+<html ng-app="App">
+<head>
+    <!--head data-->
+    <title>NDC VIDEOS</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--Third party Libraries-->
+    <script src="Scripts/angular.js"></script>
+    <script src="Scripts/angular-route.js"></script>
+    <script src="Scripts/angular-ui/ui-bootstrap-tpls.min.js"></script>
+    <script src="Scripts/angular-animate.js"></script>
+    <script src="Scripts/angular-messages.js"></script>
+    <script src="Scripts/angular-sanitize.js"></script>
+    <script src="Scripts/angular-ui-router.js"></script>
+    <script src="Scripts/angular-toastr.tpls.js"></script>
+    <script src="Scripts/satellizer.js"></script>
+    <!--CSS-->
+    <link rel="stylesheet" href="Content/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="Content/css/ui-bootstrap-csp.css" type="text/css" />
+    <link rel="stylesheet" href="Content/css/w3.css">
+    <link rel="stylesheet" href="Content/css/creative.css" type="text/css">
+    <link rel="stylesheet " href="Content/css/angular-toastr.css">
+    <link rel="stylesheet" href="Content/css/styles.css">
+</head>
+<body>
+    <div class="wrapper">
+        <div ui-view="navModule"></div>
+        <div ui-view></div>
+    </div>
+    <div ui-view="footerModule"></div>
+    <!-- Application Code -->
+    <script src="App.js"></script>
+    <script src="routingConfig.js"></script>
+    <!--Directives-->
+    <script src="Scripts/App/js/directives/dirPagination.js"></script>
+    <script src="Scripts/App/js/directives/passwordMatch.js"></script>
+    <script src="Scripts/App/js/directives/passwordStrength.js"></script>
+    <!--Filter-->
+    <script src="Scripts/App/js/filter/trustedFilter.js"></script>
+    <script src="Scripts/App/js/filter/startFrom.js"></script>
+    <!--Controllers and Services-->
+    <script src="Scripts/App/js/controllers/videoController.js"></script>
+    <script src="Scripts/App/js/controllers/allVideosController.js"></script>
+    <script src="Scripts/App/js/controllers/login/login.js"></script>
+    <script src="Scripts/App/js/controllers/login/signup.js"></script>
+    <script src="Scripts/App/js/controllers/login/logout.js"></script>
+    <script src="Scripts/App/js/controllers/login/profile.js"></script>
+    <script src="Scripts/App/js/controllers/login/navbar.js"></script>
+    <script src="Scripts/App/js/controllers/login/admin.js"></script>
+    <script src="Scripts/App/js/services/account.js"></script>
+    <script src="Scripts/App/js/services/adminservice.js"></script>
+
+    <script src="Content/js/jquery.js"></script>
+    <script src="Content/js/bootstrap.min.js"></script>
+    <script src="Content/js/jquery.easing.min.js"></script>
+    <script src="Content/js/jquery.fittext.js"></script>
+    <script src="Content/js/wow.min.js"></script>
+    <script src="Content/js/creative.js"></script>
+</body>
+</html>

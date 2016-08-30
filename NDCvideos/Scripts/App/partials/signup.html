@@ -1,0 +1,39 @@
+<header>
+    <section class="container">
+        <div class="w3-row-padding">
+            <div class="w3-form panel">
+                <div class="panel-body">
+                    <h2 class="text-center">Sign up</h2>
+                    <form class="w3-form" method="post" ng-submit="signup()" name="signupForm">
+                        <div class="w3-group">
+                            <input class="form-control" type="email" id="email" name="email" ng-model="user.email" ng-pattern="/^[a-zA-ZæÆøØåÅ][\w\.-]*[a-zA-Z0-9æÆøØåÅ]@[a-zA-ZæÆøØåÅ][\w\.-]*[a-zA-Z0-9æÆøØåÅ]\.[a-zA-Z][a-zA-Z\.]*[a-zA-Z]$/" placeholder="Email" required>
+                            <h4><span class="label label-info" ng-show="signupForm.email.$error.required && signupForm.email.$dirty">Email is required</span></h4>
+                            <h5><span class="label label-danger" ng-show="signupForm.email.$error.pattern && signupForm.email.$dirty">Email pattern is not valid</span></h5>
+                        </div>
+                        <div class="w3-group">
+                            <input class="form-control" password-strength type="password" name="password" ng-model="user.password" ng-minlength="6" placeholder="Password" required>
+                            <h4><span class="label label-info" ng-show="signupForm.password.$error.required && signupForm.password.$dirty">Password is required</span></h4>
+                            <h4><span class="label label-danger" ng-show="signupForm.password.$error.minlength && signupForm.password.$dirty">Minimum length is 6</span></h4>
+                        </div>
+                        <div class="w3-group">
+                            <input class="form-control" password-match="user.password" type="password" name="confirmPassword" ng-model="confirmPassword" placeholder="Confirm Password">
+                            <span class="ion-key form-control-feedback"></span>
+                            <div class="help-block text-danger" ng-if="signupForm.confirmPassword.$dirty" ng-messages="signupForm.confirmPassword.$error">
+                                <div ng-message="compareTo">
+                                    <h4><span class="label label-danger" ng-show="signupForm.confirmPassword.$dirty">Password does not match</span></h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="w3-group" ng-class="{ 'has-error' : signupForm.access.$invalid && signupForm.access.$dirty }">
+                            <input class="form-control" type="password" name="access" ng-model="user.access" placeholder="Access code" required>
+                            <h4><span class="label label-info" ng-show="signupForm.access.$error.required && signupForm.access.$dirty">Access code is required</span></h4>
+                        </div>
+                        <button type="submit" ng-disabled="signupForm.$invalid" class="btn btn-lg btn-block btn-primary">Sign up</button>
+                        <br />
+                        <p class="text-center text-muted">Already have an account? <a href="/#/login">Log in now</a></p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+</header>

@@ -1,0 +1,33 @@
+﻿<header>
+    <section class="container">
+        <div>
+            <h1>Add/Remove Access Codes</h1>
+            <div class="w3-responsive">
+                <div class="col-sm-4 col-sm-offset-4 text-center w3-container">
+                    <table class="w3-table w3-bordered">
+                        <tr>
+                            <td>{{accesscode[0].accesscode}}</td>
+                            <td></td>
+                        </tr>
+                        <tr ng-repeat="access in accesscode | startFrom : 1">
+                            <td>{{access.accesscode}}</td>
+                            <td><button type="button" class="btn btn-danger" ng-click="deleteAccessCode(access._id)">Delete</button></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            <div class="w3-row">
+                <div class="col-sm-4 col-sm-offset-4 text-center w3-container">
+                    <form class="w3-form">
+                        <div class="w3-group">
+                            <input type="text" class="form-control input-lg text-center w3-container" placeholder="Enter Code" ng-model="formData.accesscode">
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-lg" ng-click="addAccessCode()">Add</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+</header>
